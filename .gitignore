@@ -1,0 +1,9 @@
+# Editor temporaries
+*.swn
+*.swo
+*.swp
+*~
+
+.DS_store
+.idea
+.vscode
