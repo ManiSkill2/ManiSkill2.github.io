@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <!-- <link href="assets/img/favicon.png" rel="icon"> -->
   <!-- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">  -->
 
   <!-- Google Fonts -->
@@ -40,6 +40,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
     integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
@@ -97,7 +100,7 @@
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         <a href="https://github.com/haosulab/ManiSkill2" target="_blank"
                             class="btn-get-started scrollto">Get Started</a>
-                        <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
+                        <a href="" class="glightbox btn-watch-video"><i
                                 class="bi bi-play-circle"></i><span>Watch Video</span></a>
                     </div>
                 </div>
@@ -113,7 +116,7 @@
     <section id="clients" class="clients section-bg">
       <div class="container">
 
-        <div class="row" data-aos="zoom-in" style="display: flex; align-items: center; justify-content: center;">
+        <div class="row" data-aos="zoom-in" style="display: flex; align-items: center; justify-content: center; margin: 20px 0 0 0;">
 
           <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
             <a href="https://openreview.net/pdf?id=b_CQDy9vrD1"
@@ -175,7 +178,7 @@
               <h3> <strong>Easy To Get Started</strong></h3>
               <br>
               <p>
-                ManiSkill2 is pip installable and directly runnable in Google Colab???. 
+                ManiSkill2 is pip installable and directly runnable in <a href="">Google Colab</a> ???. 
               </p>
               <p>
                 Starting from a clean Python environment, you can see a robot working in 1 minute.
@@ -194,7 +197,7 @@
                   </a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
-                    my test
+                        <code>pip install mani-skill2</code>
                     </p>
                   </div>
                 </li>
@@ -204,7 +207,8 @@
                     Download Assets and Demo <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      xxxxxxx.
+                      <code>python -m mani_skill2.utils.download_asset ycb</code> <br>
+                      <code>python -m mani_skill2.utils.download_demo PickSingleYCB-v0</code>
                     </p>
                   </div>
                 </li>
@@ -214,19 +218,21 @@
                     Replay a Demonstration Trajectory <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
                   <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
                     <p>
-                      ffffffffff
+                        <code>python -m mani_skill2.trajectory.replay_trajctory --traj-path demos/rigid_body/PickSingle-v0/035_power_drill.h5 --vis --bg-name minimal_bedroom</code>
                     </p>
                   </div>
                 </li>
-
               </ul>
+              <p>
+                <em>* The right video is played at 2x speed.</em>
+                </p>
             </div>
 
           </div>
           
 
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150">
-            <video controls muted preload playsinline width="100%" autoplay loop>
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150" style="margin: 50px 0 0 0 ">
+            <video controls muted preload playsinline width="90%" autoplay loop>
                 <source src="./static/videos/pip_install_x2.mp4" type="video/mp4">
             </video>
 
@@ -291,7 +297,7 @@
             </div>
             
   
-            <div class="col-lg-7 align-items-stretch order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="150">
+            <div class="col-lg-7 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150" style="margin: 80px 0 0 0 ">
               <video controls muted preload playsinline width="100%" autoplay loop>
                   <source src="./static/videos/demo.mp4" type="video/mp4">
               </video>
@@ -361,7 +367,7 @@
             
   
             <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150">
-              <video controls muted preload playsinline width="100%" autoplay loop>
+              <video controls muted preload playsinline width="90%" autoplay loop>
                   <source src="./static/videos/pcd_3_tasks.mp4" type="video/mp4">
               </video>
   
@@ -429,7 +435,7 @@
             
   
             <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" data-aos="zoom-in" data-aos-delay="150">
-              <video controls muted preload playsinline width="100%" autoplay loop>
+              <video controls muted preload playsinline width="90%" autoplay loop>
                   <source src="./static/videos/viewer.mp4" type="video/mp4">
               </video>
   
@@ -887,15 +893,14 @@
               order).</span>
           </div>
 
-          <pre style="margin: 20px;"><code>@inproceedings{gu2023maniskill2,
+
+        </div>
+        <pre style="margin: 20px;"><code>@inproceedings{gu2023maniskill2,
           title={ManiSkill2: a Unified Benchmark for Generalizable Manipulation Skills},
           author={Gu, Jiayuan and Xiang, Fanbo and Li, Xuanlin and Ling, Zhan and Liu, Xiqiaing and Mu, Tongzhou and Tang, Yihe and Tao, Stone and Wei, Xinyue and Yao, Yunchao and Yuan, Xiaodi and Xie, Pengwei and Huang, Zhiao and Chen, Rui and Su, Hao},
           booktitle={International Conference on Learning Representations},
           year={2023}
           }</code></pre>
-
-        </div>
-
 
         </div>
 
@@ -908,6 +913,9 @@
   </main><!-- End #main -->
 
 
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+  </footer><!-- End Footer -->
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
