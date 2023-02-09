@@ -403,7 +403,8 @@ h6 {
 
 .container2 {
   width: 100%;
-  height: 37.5vw;
+  min-height: 37.5vw;
+  background: black;
   /* background-image: url(../../static/images/fancy_teaser_wide.png);
   background-size: contain; */
   position: relative;
@@ -421,6 +422,34 @@ h6 {
   }
 }
 
+.logo {
+  width: 70%;
+}
+
+@media (max-width: 991px) {
+  .logo {
+    width: 40%;
+  }
+}
+
+.teaser-image {
+  width: 100%;
+  height: 37.5vw;
+  background-image: url(../../static/images/fancy_teaser_wide.png);
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 991px) {
+.teaser-image {
+  width: 100%;
+  /* height: max(37.5vw, 800px); */
+  background-size: cover;
+  background-position: 75% 50%;
+}
+}
 
 .gradient {
   width: 100%;
@@ -494,7 +523,6 @@ h6 {
 
 @media (max-width: 991px) {
   #hero {
-    height: 100vh;
     text-align: center;
   }
 
@@ -1894,6 +1922,12 @@ section {
   background-position: 0 0;
   transition: background-position 0.5s ease;
 }
+
+
+.table {
+  width: 100%;
+}
+
 .table:hover {
   background-position: 100% 0;
 }
@@ -1913,4 +1947,14 @@ section {
 
 .author-block {
   display: inline-block;
+}
+
+.fa-bolt-lightning {
+  color: forestgreen;
+}
+.fa-check {
+  color: forestgreen;
+}
+.fa-thumbs-up {
+  color: forestgreen;
 }
