@@ -392,6 +392,14 @@ h6 {
   display: block;
 }
 
+.container {
+  max-width: 1200px;
+}
+/* #main { */
+/*   margin: auto; */
+/*   max-width: 1200px; */
+/* } */
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -403,18 +411,23 @@ h6 {
 
 .container2 {
   width: 100%;
-  min-height: 37.5vw;
+  height: 37.5vw;
   background: black;
-  /* background-image: url(../../static/images/fancy_teaser_wide.png);
-  background-size: contain; */
   position: relative;
   padding: 0;
   margin: 0;
   border: 0;
 }
 
+@media (max-width: 991px) {
+.container2 {
+  height: auto;
+  min-height: 37.5vw;
+}
+}
+
 .title-container {
-  margin: 20px 0 0 40px;
+  margin: 0 0 0 40px;
 }
 @media (max-width: 991px) {
   .title-container {
@@ -432,9 +445,13 @@ h6 {
   }
 }
 
+.nav-button {
+  margin: 10px;
+}
+
 .teaser-image {
   width: 100%;
-  height: 37.5vw;
+  height: 100%;
   background-image: url(../../static/images/fancy_teaser_wide.jpg);
   background-size: cover;
   position: absolute;
@@ -444,9 +461,8 @@ h6 {
 
 @media (max-width: 991px) {
 .teaser-image {
-  width: 100%;
-  background-size: cover;
-  /* background-position: 75% 50%; */
+  background-position: 75% 50%;
+  filter: brightness(70%);
 }
 }
 
@@ -591,7 +607,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -728,8 +744,8 @@ section {
 /*--------------------------------------------------------------
 # Why Us
 --------------------------------------------------------------*/
-.why-us .content {
-  padding: 60px 100px 0 100px;
+.content {
+  padding: 20px 0 0;
 }
 
 .why-us .content h3 {
@@ -749,14 +765,8 @@ section {
   color: #848484;
 }
 
-.why-us .img {
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .why-us .accordion-list {
-  padding: 0 100px 60px 100px;
+  padding: 0;
 }
 
 .why-us .accordion-list ul {
@@ -769,7 +779,7 @@ section {
 }
 
 .why-us .accordion-list li {
-  padding: 20px;
+  padding: 5px;
   background: #fff;
   border-radius: 4px;
 }
@@ -925,6 +935,7 @@ section {
   padding: 50px 30px;
   transition: all ease-in-out 0.4s;
   background: #fff;
+  width: 100%;
 }
 
 .services .icon-box .icon {
