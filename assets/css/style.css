@@ -445,9 +445,8 @@ h6 {
 @media (max-width: 991px) {
 .teaser-image {
   width: 100%;
-  /* height: max(37.5vw, 800px); */
   background-size: cover;
-  background-position: 75% 50%;
+  /* background-position: 75% 50%; */
 }
 }
 
@@ -1925,7 +1924,7 @@ section {
 
 
 .table {
-  width: 100%;
+  width: 1000px;
 }
 
 .table:hover {
