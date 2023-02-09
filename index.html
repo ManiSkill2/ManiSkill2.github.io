@@ -467,20 +467,20 @@
       <section class="section">
         <div class="columns is-centered">
           <div class="column">
-            <h3 class="title is-3 has-text-centered">Curated Towards Diverse Downstream Applications</h3>
+            <h3 class="title is-3 has-text-centered", style="margin-bottom: 50px;">Curated Towards Diverse Downstream Applications</h3>
 
             <div class="content has-text-justified">
               <h4 class="title is-4">Reinforcement Learning</h4>
               <p>
-                We benchmark demonstration-based online reinforcement learning by augmenting Proximal Policy Gradient (PPO) objective with the demonstration objective from Demonstration-Augmented Policy Gradient (DAPG). We train all agents from scratch for 25 million time steps. Due to limited computation resources, we only report results on rigid-body environments.
+                We benchmark demonstration-based online reinforcement learning by augmenting Proximal Policy Gradient (PPO) objective with the demonstration objective from Demonstration-Augmented Policy Gradient (DAPG). RGBD image-based agents receive two 128x128 image observations captured from one camera mounted on the robot head and another mounted on the end-effector. 3D point cloud agents receive a point cloud backprojected from the two RGBD images, transformed to the robot's end-effector frame, and fused together through concatenation. In addition, for PickCube and PickSingleYCB, where target goal positions are given, we concatenate 50 randomly-sampled green points around the goal position to the input point cloud to serve as visual cues. We train all agents from scratch for 25 million time steps. Due to limited computation resources, we only report results on rigid-body environments.
               </p>
               <img src="./static/images/dapg_rigid.png" alt="DAPG results">
               <div>
                 Here are some observations from our results:
                 <ul>
-                  <li>For pick-and-place tasks, point cloud-based agents perform significantly better than RGBD-based agents.</li>
+                  <li>For pick-and-place tasks, point cloud-based agents (plus good design choices) perform significantly better than RGBD-based agents.</li>
                   <li>Selecting good coordinate frames to represent input point clouds could be crucial for agents' success, which corroborates the findings in <a href="https://colin97.github.io/FrameMining/">Frame Mining</a>.</li>
-                  <li>Adding proper visual cues could benefit point cloud-based agent learning. For example, we add points to represent the goal in visual observations instead of using a 3D position.</li>
+                  <li>Adding proper visual cues could benefit point cloud-based agent learning. For example, we find that adding colored points to represent the goal in visual observations outperforms representing the goal with a 3D position vector.</li>
                 </ul>
               </div>
               <br>
@@ -494,8 +494,8 @@
                 </video>
               </div>
               <div class="subtitle is-6">
-                Left: The cup is successfully picked and placed.
-                Right: The bottle with more complex geometry is hard to picked.
+                Left: Agent successfully picks up the cup and places it at the target.
+                Right: Agent fails to pick up the bottle due to its more challenging geometry.
               </div>
               <div style="text-align: center">
                 <video controls muted preload playsinline width="45%">
@@ -506,8 +506,8 @@
                 </video>
               </div>
               <div class="subtitle is-6">
-                Left: The red cube is successfully stacked on the green one.
-                Right: The green cube is close to the red cube, which makes it difficult to pick the red one up.
+                Left: Agent successfully stacks the red cube on the green one.
+                Right: The green cube is close to the red cube, which makes it difficult to pick up the red cube.
               </div>
               <div style="text-align: center">
                 <video controls muted preload playsinline width="45%">
@@ -518,7 +518,7 @@
                 </video>
               </div>
               <div class="subtitle is-6">
-                It is difficult for RL agents to solve precise assembly tasks (left: PegInsertionSide; right: PlugCharger) that require high precision.
+                It is difficult for RL agents to solve assembly tasks (left: PegInsertionSide, clearance 3mm; right: PlugCharger, clearance 0.5mm) that require highly precise controls. This suggests that existing RL algorithms might be insufficient at performing precise actions.
               </div>
             </div>
           
@@ -532,7 +532,6 @@
                 For rigid-body tasks, we observe low or zero success rates. This suggests that BC is insufficient to tackle many crucial challenges from our benchmark, such as precise control in assembly and large asset variations.
               </div>
               <div>
-                For rigid-body tasks, we observe low or zero success rates. This suggests that BC is insufficient to tackle many crucial challenges from our benchmark, such as precise control in assembly and large asset variations. 
                 For soft-body tasks, we observe that it is difficult for BC agents to precisely estimate action influence on soft body properties (e.g. displacement quantity or deformation). Specifically, agents perform poorly on Excavate and Pour, as Excavate is successful only if a specified amount of clay is scooped up and Pour is successful when the final liquid level accurately matches a target line. On the other hand, for Fill and Hang, which do not have such precision requirements (for Fill, the task is successful as long as the amount of particles in the beaker is larger than a threshold), the success rates are much higher. In addition, we observe that BC agents cannot well utilize target shapes to guide precise soft body deformation, as they are never successful on Pinch or Write.
               </div>
               <br>
@@ -622,7 +621,7 @@
                 We train TPN from scratch with image data sampled from training configurations using two cameras, a base camera and a hand camera.
                 To address our high-precision success criterion, we increase the number of bins for rotation prediction from 36 in the original work to 144.
                 During evaluation, we employ motion planning to move the gripper to the predicted pick position, grasp the peg, then generate another plan to move the peg to the predicted goal pose and drop it into the hole.
-                The success rate over 100 trials is 18%, and the pose accuracy is 96%.
+                The success rate over 100 trials is 18% following our success metric, and 99% following the original success metric of TPN.
               </p>
             </div>
 
