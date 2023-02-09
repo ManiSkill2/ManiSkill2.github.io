@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ManiSkill2: a Unified Benchmark for Generalizable Manipulation Skills</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"
+    integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container ">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              ManiSkill2: a Unified Benchmark for Generalizable Manipulation Skills
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://jiayuan-gu.github.io">Jiayuan Gu</a><sup>1&#8224</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.fbxiang.com/">Fanbo Xiang</a><sup>1&#8224</sup>,</span>
+              <span class="author-block">
+                <a href="https://xuanlinli17.github.io">Xuanlin Li</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Zhan Ling</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Xiqiang Liu</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu/~t3mu/">Tongzhou Mu</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Yihe Tang</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Stone Tao</a><sup>1*</sup>,</span>
+              <br>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/xinyue-wei">Xinyue Wei</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Yunchao Yao</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="">Xiaodi Yuan</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="">Pengwei Xie</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/zhiao-huang">Zhiao Huang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://cray695.wixsite.com/mysite">Rui Chen</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://cseweb.ucsd.edu/~haosu/">Hao Su</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>UC San Diego,</span>
+              <span class="author-block"><sup>2</sup>Tsinghua University</span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>&#8224</sup> and <sup>*</sup> indicate equal contribution (in alphabetic
+                order).</span>
+            </div>
+
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=b_CQDy9vrD1"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Slides Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-slideshare"></i>
+                  </span>
+                  <span>Slides</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/haosulab/ManiSkill2"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Doc -->
+              <span class="link-block">
+                <a href="https://haosulab.github.io/ManiSkill2"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-book"></i>
+                  </span>
+                  <span>Doc</span>
+                </a>
+              </span>
+              <!-- Colab -->
+              <span class="link-block">
+                <a href="https://github.com/haosulab/ManiSkill2"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <!-- <i class="fas fa-infinity"></i> -->
+                    <i class="ai ai-coursera"></i>
+                  </span>
+                  <span>Colab</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <!-- <p style="border-width:3px; border-style:solid; border-color:#FF0000; padding: 1em;">
+              <font size="140", face=""><strong>Make  Robot  Learning  Simple</strong></font>
+            </p> -->
+            <h1 id="slogan" class="title is-1 has-text-centered">Make Robot Learning Simple</h1>
+            <video controls muted preload playsinline width="100%">
+              <source src="" type="video/mp4" , alt="teaser video">
+            </video>
+            <div class="subtitle is-4">
+              ManiSkill2 is a unified benchmark for generalizable manipulation skills. It features <strong style="color: #AC3931">20 out-of-the-box task families</strong> with <strong style="color: #DD1C1A">2K+ objects for task variations</strong> and <strong style="color: #F26157">4M+ frames of demonstrations</strong>.
+              It also supports <strong style="color: #D95D39">fast rendering for visual RL (2000+FPS)</strong>, and provides <strong style="color: #FA7E61">a wide range of baselines for sense-plan-act, reinforcement and imitation learning</strong>.
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <div id="teaser-banner">
+              <div id="teaser-banner-background"></div>
+              <video playsinline autoplay muted loop>
+                <source src="./static/videos/demo.mp4" type="video/mp4">
+              </video>
+              <p id="teaser-banner-overlay-0">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">pip installable</span>
+              </p>
+              <p id="teaser-banner-overlay-1">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">accessible assets and demonstrations</span>
+              </p>
+              <p id="teaser-banner-overlay-2">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">out-of-box task variants</span>
+              </p>
+              <p id="teaser-banner-overlay-3">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">fast rendering for visual RL</span>
+              </p>
+              <p id="teaser-banner-overlay-4">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">well-curated tasks</span>
+              </p>
+              <p id="teaser-banner-overlay-5">
+                <span class="border"></span>
+                <span class="is-size-3-desktop">native point cloud support</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>ManiSkill2</th>
+                  <th>BEHAVIOR-1K</th>
+                  <th>Habitat 2.0</th>
+                  <th>IssacGym</th>
+                  <th>MetaWorld</th>
+                  <th>ORBIT</th>
+                  <th>Robosuite</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- &#9989 &#10060-->
+                <th>Fast rendering</th>
+                <td><i class="fa-solid fa-bolt-lightning"></i><i class="fa-solid fa-bolt-lightning"></i></td>
+                <td><i class="fa-solid fa-clock"></i></td>
+                <td><i class="fa-solid fa-bolt-lightning"></i></td>
+                <td><i class="fa-solid fa-clock"></i></td>
+                <td><i class="fa-solid fa-clock"></i></td>
+                <td><i class="fa-solid fa-clock"></i></td>
+                <td><i class="fa-solid fa-clock"></i></td>
+              </tbody>
+              <tbody>
+                <th>Large-scale demonstrations</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+              </tbody>
+              <tbody>
+                <th>Object variations</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+              </tbody>
+              <tbody>
+                <th>Non-trivial visual baselines</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+              </tbody>
+              <tbody>
+                <th>pip installable</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+              </tbody>
+              <tbody>
+                <th>3D point cloud support</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+              </tbody>
+              <!-- <tbody>
+                <th>Interactive GUI</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+              </tbody> -->
+              <tbody>
+                <th>Open-source engine</th>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+                <td><i class="fa-solid fa-xmark"></i></td>
+                <td><i class="fa-solid fa-check"></i></td>
+              </tbody>
+              <tbody>
+                <th>Hardware compatibility</th>
+                <td><i class="fa-solid fa-thumbs-up"></i></td>
+                <td><i class="fa-solid fa-circle-exclamation"></i></td>
+                <td><i class="fa-solid fa-thumbs-up"></i></td>
+                <td><i class="fa-solid fa-circle-exclamation"></i></td>
+                <td><i class="fa-solid fa-circle-exclamation"></i></td>
+                <td><i class="fa-solid fa-thumbs-up"></i></td>
+                <td><i class="fa-solid fa-thumbs-up"></i></td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="hero teaser">
+    <div class="container ">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="columns is-four-fifths">
+            <video id="viewr" controls muted preload playsinline width="20%">
+              <source src="./static/videos/viewer.mp4" type="video/mp4">
+            </video>
+            <video id="render_speed" controls muted preload playsinline width="20%">
+              <source src="./static/videos/render_speed_curves.mp4" type="video/mp4">
+            </video>
+            <video id="obj_variations_3" controls muted preload playsinline width="20%">
+              <source src="./static/videos/obj_variations.mp4" type="video/mp4">
+            </video>
+            <video id="pip_install" controls muted preload playsinline width="20%">
+              <source src="./static/videos/pip_install_x2.mp4" type="video/mp4">
+            </video>
+            <video id="pcd_vis" controls muted preload playsinline width="20%">
+              <source src="./static/videos/pcd_3_tasks.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section class="hero teaser">
+    <div class="container ">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <img src="./static/images/ABC.png" class="teaser-image" alt="five show-off GIFs" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- <section class="hero teaser">
+    <div class="container ">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <img src="./static/images/table.png" class="teaser-image" alt="comparison table" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <section class="hero teaser">
+    <div class="container ">
+      <div class="hero-body">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h3 class="title is-3 has-text-centered">Diverse Task Families Out-of-the-Box </h3>
+            <img src="./static/images/teaser.jpg" class="teaser-image" alt="teaser image." />
+            <h3 class="subtitle">
+              ManiSkill2 provides a unified, fast, and accessible system that encompasses well-curated manipulation
+              tasks (e.g., stationary/mobile-base, single/dual-arm, rigid/soft-body).
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Easy To Get Started</h2>
+            <div class="content has-text-justified">
+              <video id="demonstrations" controls muted preload playsinline width="100%">
+                <source src="" type="video/mp4" , alt="pip intall video">
+              </video>
+              some texts.
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Fast Visual RL Experiment Support</h2>
+            <div class="content has-text-justified">
+              <video id="demonstrations" controls muted preload playsinline width="100%">
+                <source src="" type="video/mp4" , alt="xinyue's fancy curve video">
+              </video>
+              <video id="demonstrations" controls muted preload playsinline width="100%">
+                <source src="" type="video/mp4" , alt="200+FPS in bedroom">
+              </video>
+              <div style="text-align: center">
+                <img src="./static/images/fps_random.png" width="48%" alt="FPS with random actions" />
+                <img src="./static/images/fps_cnn.png" width="48%" alt="FPS with nature CNN" />
+              </div>
+              <div class="subtitle is-6">
+                <font size="-1"> (Above Figure): Comparison of sample collection speed (FPS) with random 
+                  actions and with Nature CNN-sampled actions across different frameworks and different numbers of parallel environments. 
+                  ``ManiSkill2-Sync-Render'' refers to ManiSkill2 with synchronous rendering and without render server. 
+                  ``ManiSkill2'' refers to ManiSkill2 with asynchronous rendering but without render server. 
+                  ``ManiSkill2-Server'' refers to ManiSkill2 with both asynchronous rendering and render server enabled. 
+                  Some curves are not fully drawn beyond a certain number of parallel environments due to performance drop 
+                  (``ManiSkill2-Server'' & ``Isaac Gym''), GPU out of memory (``RoboSuite'' & ``ManiSkill2-Sync-Render'' & ``ManiSkill2''), 
+                  crash (``Habitat 2.0'').
+                </font>
+              </div>
+            </div>
+            <div class="content has-text-justified">
+              Visual RL training demands millions of samples from interaction, which makes performance optimization an important aspect in environment design.
+              We implement an asynchronous RPC-based render server-client system to optimize throughput and reduce GPU memory usage.
+              <strong>We manage to collect samples with an RGBD-input PPO policy at about 2000 FPS with 1 GPU and 16 processes on a regular workstation.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Realistic Depth Simulation</h2>
+            <div class="content has-text-justified">
+              Just show what we have.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column">
+            <h2 class="title is-3 has-text-centered">Diverse Assets and Large-scale Demonstrations</h2>
+            <div class="content has-text-justified">
+              <video id="demonstrations" controls muted preload playsinline width="100%">
+                <source src="./static/videos/demo.mp4" type="video/mp4">
+              </video>
+              ManiSkill2 includes a total of 20 well-curated, verified, and challenging manipulation task families of multiple types (<strong>stationary/mobile-base, single/dual-arm, rigid/soft-body</strong>), with over <strong>2000 objects and 4M demonstration frames</strong>, to support generic and generalizable manipulation skills.
+              <br>
+              Moreover, ManiSkill2 embraces <strong>a unique functionality to convert demonstration actions across many different robotic controllers and action spaces</strong>. It enables us to exploit large-scale demonstrations generated by any approach regardless of robotic controllers.
+            </div>
+            <div class="content has-text-justified">
+              <video id="xxx" controls muted preload playsinline width="100%">
+                <source src="" type="video/mp4" , alt="switcing assets">
+              </video>
+              GIF/Video to show the process to download assets and showcase switching assets
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="columns is-centered">
+          <div class="column">
+            <h3 class="title is-3 has-text-centered", style="margin-bottom: 50px;">Curated Towards Diverse Downstream Applications</h3>
+
+            <div class="content has-text-justified">
+              <h4 class="title is-4">Reinforcement Learning</h4>
+              <p>
+                We benchmark demonstration-based online reinforcement learning by augmenting Proximal Policy Gradient (PPO) objective with the demonstration objective from Demonstration-Augmented Policy Gradient (DAPG). RGBD image-based agents receive two 128x128 image observations captured from one camera mounted on the robot head and another mounted on the end-effector. 3D point cloud agents receive a point cloud backprojected from the two RGBD images, transformed to the robot's end-effector frame, and fused together through concatenation. In addition, for PickCube and PickSingleYCB, where target goal positions are given, we concatenate 50 randomly-sampled green points around the goal position to the input point cloud to serve as visual cues. We train all agents from scratch for 25 million time steps. Due to limited computation resources, we only report results on rigid-body environments.
+              </p>
+              <img src="./static/images/dapg_rigid.png" alt="DAPG results">
+              <div>
+                Here are some observations from our results:
+                <ul>
+                  <li>For pick-and-place tasks, point cloud-based agents (plus good design choices) perform significantly better than RGBD-based agents.</li>
+                  <li>Selecting good coordinate frames to represent input point clouds could be crucial for agents' success, which corroborates the findings in <a href="https://colin97.github.io/FrameMining/">Frame Mining</a>.</li>
+                  <li>Adding proper visual cues could benefit point cloud-based agent learning. For example, we find that adding colored points to represent the goal in visual observations outperforms representing the goal with a 3D position vector.</li>
+                </ul>
+              </div>
+              <br>
+              <h5>More qualitative results</h5>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/PickYCB_success2.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/PickYCB_fail2.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Agent successfully picks up the cup and places it at the target.
+                Right: Agent fails to pick up the bottle due to its more challenging geometry.
+              </div>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/StackCube_success.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/StackCube_fail1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Agent successfully stacks the red cube on the green one.
+                Right: The green cube is close to the red cube, which makes it difficult to pick up the red cube.
+              </div>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/PegInsertionSide.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="45%">
+                  <source src="./static/videos/PlugCharger.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                It is difficult for RL agents to solve assembly tasks (left: PegInsertionSide, clearance 3mm; right: PlugCharger, clearance 0.5mm) that require highly precise controls. This suggests that existing RL algorithms might be insufficient at performing precise actions.
+              </div>
+            </div>
+          
+            <div class="content has-text-justified">
+              <h4 class="title is-4">Imitation Learning</h4>
+              <p>
+                We benchmark imitation learning (IL) with behavior cloning (BC) on our rigid and soft-body tasks. All models are trained for 50k gradient steps with batch size 256 and evaluated on test configurations.
+              </p>
+              <img src="./static/images/bc_all.png" alt="BC results">
+              <div>
+                For rigid-body tasks, we observe low or zero success rates. This suggests that BC is insufficient to tackle many crucial challenges from our benchmark, such as precise control in assembly and large asset variations.
+              </div>
+              <div>
+                For soft-body tasks, we observe that it is difficult for BC agents to precisely estimate action influence on soft body properties (e.g. displacement quantity or deformation). Specifically, agents perform poorly on Excavate and Pour, as Excavate is successful only if a specified amount of clay is scooped up and Pour is successful when the final liquid level accurately matches a target line. On the other hand, for Fill and Hang, which do not have such precision requirements (for Fill, the task is successful as long as the amount of particles in the beaker is larger than a threshold), the success rates are much higher. In addition, we observe that BC agents cannot well utilize target shapes to guide precise soft body deformation, as they are never successful on Pinch or Write.
+              </div>
+              <br>
+              <h5>More qualitative results</h5>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Excavate.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Fill.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Hang.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Excavate; Middle: Fill; Right: Hang.
+              </div>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Pour.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Pinch.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/Write.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Pour; Middle: Pinch; Right: Write.
+              </div>
+            </div>
+
+            <div class="content has-text-justified">
+              Sense-plan-act (SPA) is a classical framework in robotics.
+              Typically, a SPA method first leverages perception algorithms to build a world model from observations, then plans a sequence of actions through motion planning, and finally execute the plan.
+              However, SPA methods are usually open-loop and limited by motion planning, since perception and planning are independently optimized.
+              We experiment with two perception algorithms, Contact-GraspNet and Transporter Networks.
+            </div>
+            <div class="content has-text-justified">
+              <h4 class="title is-4">Sense-plan-act</h4>
+              <h5 class="title is-5">Contact-GraspNet for PickSingleYCB</h5>
+              <div style="text-align: center">
+                <img src="https://github.com/NVlabs/contact_graspnet/raw/main/examples/2.gif" width="45%" alt="Contact-GraspNet" />
+                <video controls muted preload playsinline width="26%">
+                  <source src="./static/videos/drill_success_1.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="26%">
+                  <source src="./static/videos/hammer_bad_grasp_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Illustration of <a href="https://github.com/NVlabs/contact_graspnet">Contact-GraspNet (CGN)</a>.
+                <br>
+                Right: CGN results in the environment "PickSingleYCB" of ManiSkill2:
+                1) The power drill is successfully placed; 
+                2) The hammer is placed but the grasp is not good enough.
+              </div>
+              <p>
+                For each of the 74 objects, we conduct 5 trials (different initial states). The task succeeds if the object's center of mass is within 2.5cm of the goal. The success rate is 43.24%.
+                There are two main failure modes: 1) predicted poses are of low confidence (27.03% of trials), especially for objects (e.g., spoon and fork) that are small and thin; 2) predicted poses are of low grasp quality or unreachable (29.73% of trials), but with high confidence.
+              </p>
+              
+              <h5 class="title is-5">Transporter Networks for AssemblingKits</h5>
+              <div style="text-align: center">
+                <video controls muted preload playsinline width="33%">
+                  <source src="https://transporternets.github.io/images/animation.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/tpn_success_1.mp4" type="video/mp4">
+                </video>
+                <video controls muted preload playsinline width="33%">
+                  <source src="./static/videos/tpn_fail_1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="subtitle is-6">
+                Left: Illustration of <a href="https://transporternets.github.io/">Transporter Networks (TPN)</a>.
+                <br>
+                Right: TPN results in the environment "AssemblingKits" of ManiSkill2:
+                1) The shape is successfully inserted into the slot; 
+                2) The shape is close but not inserted into the slot.
+              </div>
+              <p>
+                The original success metric (pose accuracy) used in TPN is whether the peg is placed within 1cm and 15 degrees of the goal pose.
+                Note that our version requires pieces to actually fit into holes, and thus our success metric is much stricter.
+                We train TPN from scratch with image data sampled from training configurations using two cameras, a base camera and a hand camera.
+                To address our high-precision success criterion, we increase the number of bins for rotation prediction from 36 in the original work to 144.
+                During evaluation, we employ motion planning to move the gripper to the predicted pick position, grasp the peg, then generate another plan to move the peg to the predicted goal pose and drop it into the hole.
+                The success rate over 100 trials is 18% following our success metric, and 99% following the original success metric of TPN.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{gu2023maniskill2,
+        title={ManiSkill2: a Unified Benchmark for Generalizable Manipulation Skills},
+        author={Gu, Jiayuan and Xiang, Fanbo and Li, Xuanlin and Ling, Zhan and Liu, Xiqiaing and Mu, Tongzhou and Tang, Yihe and Tao, Stone and Wei, Xinyue and Yao, Yunchao and Yuan, Xiaodi and Xie, Pengwei and Huang, Zhiao and Chen, Rui and Su, Hao},
+        booktitle={International Conference on Learning Representations},
+        year={2023}
+      }
+    </code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://openreview.net/pdf?id=b_CQDy9vrD1">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <!-- <a class="icon-link" href="" class="external-link"
+          disabled>
+          <i class="fab fa-slideshare"></i>
+        </a> -->
+        <a class="icon-link" href="https://github.com/haosulab/ManiSkill2" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
