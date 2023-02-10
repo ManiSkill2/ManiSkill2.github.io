@@ -400,10 +400,7 @@ h6 {
 /*   max-width: 1200px; */
 /* } */
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-#hero {
+#banner {
   width: 100%;
   padding: 0;
   margin: 0;
@@ -478,7 +475,7 @@ h6 {
 }
 }
 
-#hero h1 {
+#banner h1 {
   margin: 0 0 10px 0;
   font-size: 48px;
   font-weight: 700;
@@ -486,13 +483,13 @@ h6 {
   color: #fff;
 }
 
-#hero h2 {
+#banner h2 {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 50px;
   font-size: 24px;
 }
 
-#hero .btn-get-started {
+#banner .btn-get-started {
   font-family: "Jost", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -506,11 +503,11 @@ h6 {
   background: #47b2e4;
 }
 
-#hero .btn-get-started:hover {
+#banner .btn-get-started:hover {
   background: #209dd8;
 }
 
-#hero .btn-watch-video2 {
+#banner .btn-watch-video2 {
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -520,7 +517,7 @@ h6 {
   line-height: 1;
 }
 
-#hero .btn-watch-video2 i {
+#banner .btn-watch-video2 i {
   line-height: 0;
   color: #fff;
   font-size: 32px;
@@ -528,56 +525,43 @@ h6 {
   margin-right: 8px;
 }
 
-#hero .btn-watch-video2:hover i {
+#banner .btn-watch-video2:hover i {
   color: #47b2e4;
 }
 
-#hero .animated {
+#banner .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
 
 @media (max-width: 991px) {
-  #hero {
+  #banner {
     text-align: center;
   }
 
-  #hero .animated {
+  #banner .animated {
     -webkit-animation: none;
     animation: none;
   }
 
-  #hero .hero-img {
-    text-align: center;
-  }
-
-  #hero .hero-img img {
-    width: 50%;
-  }
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
+  #banner h1 {
     font-size: 28px;
     line-height: 36px;
   }
 
-  #hero h2 {
+  #banner h2 {
     font-size: 18px;
     line-height: 24px;
     margin-bottom: 30px;
   }
 
-  #hero .hero-img img {
-    width: 70%;
-  }
 }
 
 @media (max-width: 575px) {
-  #hero .hero-img img {
-    width: 80%;
-  }
 
-  #hero .btn-get-started {
+  #banner .btn-get-started {
     font-size: 16px;
     padding: 10px 24px 11px 24px;
   }
