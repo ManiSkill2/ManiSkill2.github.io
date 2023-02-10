@@ -656,15 +656,12 @@ section {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Clients
---------------------------------------------------------------*/
-.clients {
+.navs {
   padding: 12px 0;
   text-align: center;
 }
 
-.clients img {
+.navs img {
   max-width: 45%;
   transition: all 0.4s ease-in-out;
   display: inline-block;
@@ -672,13 +669,13 @@ section {
   filter: grayscale(100);
 }
 
-.clients img:hover {
+.navs img:hover {
   filter: none;
   transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-  .clients img {
+  .navs img {
     max-width: 40%;
   }
 }
@@ -748,43 +745,43 @@ section {
   padding: 20px 0 0;
 }
 
-.why-us .content h3 {
+.get-started .content h3 {
   font-weight: 400;
   font-size: 34px;
   color: #37517e;
 }
 
-.why-us .content h4 {
+.get-started .content h4 {
   font-size: 20px;
   font-weight: 700;
   margin-top: 5px;
 }
 
-.why-us .content p {
+.get-started .content p {
   font-size: 15px;
   color: #848484;
 }
 
-.why-us .accordion-list {
+.get-started .accordion-list {
   padding: 0;
 }
 
-.why-us .accordion-list ul {
+.get-started .accordion-list ul {
   padding: 0;
   list-style: none;
 }
 
-.why-us .accordion-list li+li {
+.get-started .accordion-list li+li {
   margin-top: 15px;
 }
 
-.why-us .accordion-list li {
+.get-started .accordion-list li {
   padding: 5px;
   background: #fff;
   border-radius: 4px;
 }
 
-.why-us .accordion-list a {
+.get-started .accordion-list a {
   display: block;
   position: relative;
   font-family: "Poppins", sans-serif;
@@ -796,104 +793,101 @@ section {
   cursor: pointer;
 }
 
-.why-us .accordion-list span {
+.get-started .accordion-list span {
   color: #47b2e4;
   font-weight: 600;
   font-size: 18px;
   padding-right: 10px;
 }
 
-.why-us .accordion-list i {
+.get-started .accordion-list i {
   font-size: 24px;
   position: absolute;
   right: 0;
   top: 0;
 }
 
-.why-us .accordion-list p {
+.get-started .accordion-list p {
   margin-bottom: 0;
   padding: 10px 0 0 0;
 }
 
-.why-us .accordion-list .icon-show {
+.get-started .accordion-list .icon-show {
   display: none;
 }
 
-.why-us .accordion-list a.collapsed {
+.get-started .accordion-list a.collapsed {
   color: #343a40;
 }
 
-.why-us .accordion-list a.collapsed:hover {
+.get-started .accordion-list a.collapsed:hover {
   color: #47b2e4;
 }
 
-.why-us .accordion-list a.collapsed .icon-show {
+.get-started .accordion-list a.collapsed .icon-show {
   display: inline-block;
 }
 
-.why-us .accordion-list a.collapsed .icon-close {
+.get-started .accordion-list a.collapsed .icon-close {
   display: none;
 }
 
 @media (max-width: 1024px) {
 
-  .why-us .content,
-  .why-us .accordion-list {
+  .get-started .content,
+  .get-started .accordion-list {
     padding-left: 0;
     padding-right: 0;
   }
 }
 
 @media (max-width: 992px) {
-  .why-us .img {
+  .get-started .img {
     min-height: 400px;
   }
 
-  .why-us .content {
+  .get-started .content {
     padding-top: 30px;
   }
 
-  .why-us .accordion-list {
+  .get-started .accordion-list {
     padding-bottom: 30px;
   }
 }
 
 @media (max-width: 575px) {
-  .why-us .img {
+  .get-started .img {
     min-height: 200px;
   }
 }
 
-/*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
-.skills .content h3 {
+.objects .content h3 {
   font-weight: 700;
   font-size: 32px;
   color: #37517e;
   font-family: "Poppins", sans-serif;
 }
 
-.skills .content ul {
+.objects .content ul {
   list-style: none;
   padding: 0;
 }
 
-.skills .content ul li {
+.objects .content ul li {
   padding-bottom: 10px;
 }
 
-.skills .content ul i {
+.objects .content ul i {
   font-size: 20px;
   padding-right: 4px;
   color: #47b2e4;
 }
 
-.skills .content p:last-child {
+.objects .content p:last-child {
   margin-bottom: 0;
 }
 
-.skills .progress {
+.objects .progress {
   height: 60px;
   display: block;
   background: none;
